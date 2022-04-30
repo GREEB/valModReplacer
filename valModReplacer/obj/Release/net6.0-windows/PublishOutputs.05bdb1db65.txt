@@ -1,0 +1,5 @@
+C:\Users\g99\source\repos\valModReplacer\valModReplacer\bin\Release\net6.0-windows\publish\valModReplacer.exe
+C:\Users\g99\source\repos\valModReplacer\valModReplacer\bin\Release\net6.0-windows\publish\valModReplacer.dll
+C:\Users\g99\source\repos\valModReplacer\valModReplacer\bin\Release\net6.0-windows\publish\valModReplacer.deps.json
+C:\Users\g99\source\repos\valModReplacer\valModReplacer\bin\Release\net6.0-windows\publish\valModReplacer.runtimeconfig.json
+C:\Users\g99\source\repos\valModReplacer\valModReplacer\bin\Release\net6.0-windows\publish\valModReplacer.pdb

@@ -1,0 +1,2 @@
+C:\Users\g99\source\repos\valModReplacer\valModReplacer\bin\Release\net6.0-windows\publish\win-x64\valModReplacer.pdb
+C:\Users\g99\source\repos\valModReplacer\valModReplacer\bin\Release\net6.0-windows\publish\win-x64\valModReplacer.exe

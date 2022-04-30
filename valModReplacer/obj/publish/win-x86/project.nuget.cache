@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "PUME7Q11qZCwt0jxioGEAdmj58AzAgqWICOqwBz479Q+rzySYqD+1MYx5htT+NGcMUzbUpl3aD7kw6fUShVUqA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\g99\\source\\repos\\valModReplacer\\valModReplacer\\valModReplacer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\g99\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.4\\microsoft.netcore.app.runtime.win-x86.6.0.4.nupkg.sha512",
+    "C:\\Users\\g99\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.4\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.4.nupkg.sha512",
+    "C:\\Users\\g99\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.4\\microsoft.aspnetcore.app.runtime.win-x86.6.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
