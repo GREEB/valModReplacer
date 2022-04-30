@@ -3,6 +3,10 @@
 ]([](https://github.com/GREEB/valModReplacer/raw/main/valModReplacer/bin/Release/net6.0-windows/publish/win-x64/valModReplacer.exe)
 )
 
+- Url is saved in app so client only has to enter it once
+- Backup of old BepInEx folder is made
+- BepInEx folder gets fully replaced also configs
+
 Really just replaces a folder...[here](https://github.com/GREEB/gvModPack) what a repo compatible with this looks like
 
 ![image](https://user-images.githubusercontent.com/1221769/166087736-dc0cebc0-e9e7-4f42-9b78-30eb312a5225.png)
