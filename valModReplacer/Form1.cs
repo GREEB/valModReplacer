@@ -8,34 +8,15 @@ namespace valModReplacer
 {
     public partial class Form1 : Form
     {
+        static class Iou
+        {
+            public static string type;
+        }
         public Form1()
         {
             InitializeComponent();
-
-            string root = @".\BepInEx";
-            if (Directory.Exists(root))
-            {
-                installButton.Text = "Update";
-            }
-            else
-            {
-                installButton.Text = "Install";
-            }
-
-            string curFile = @".\valheim.exe";
-            //string curFile = @".\valModReplacer.exe";
-            if (File.Exists(curFile))
-            {
-                toolStripStatusLabel2.Text = "Ready";
-                toolStripStatusLabel2.ForeColor = Color.Green;
-            }
-            else
-            {
-                installButton.Enabled = false;
-                installButton.Text = "can't";
-                toolStripStatusLabel2.Text = "wrong folder, wont run, put this into your game folder";
-                toolStripStatusLabel2.ForeColor = Color.Red;
-            }
+            folderChecks();
+            urlChecks();
 
         }
         private async void button1_Click(object sender, EventArgs e)
@@ -70,6 +51,7 @@ namespace valModReplacer
             // Download file
             toolStripStatusLabel2.Text = "Downloading ...";
             Directory.CreateDirectory(tempPath);
+         
             try
             {
                 client.DownloadFile(new Uri(urlBox.Text), fileName);
@@ -88,6 +70,7 @@ namespace valModReplacer
                 toolStripStatusLabel2.Text = "Download Successful";
 
             }
+
             toolStripStatusLabel2.Text = "Extracting Zip";
             ZipFile.ExtractToDirectory(zipFilePath, tempPath);
             var directories = Directory.GetDirectories(tempPath);
@@ -114,27 +97,21 @@ namespace valModReplacer
         }
         static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
         {
-            // Get information about the source directory
             var dir = new DirectoryInfo(sourceDir);
 
-            // Check if the source directory exists
             if (!dir.Exists)
                 throw new DirectoryNotFoundException($"Source directory not found: {dir.FullName}");
 
-            // Cache directories before we start copying
             DirectoryInfo[] dirs = dir.GetDirectories();
 
-            // Create the destination directory
             Directory.CreateDirectory(destinationDir);
 
-            // Get the files in the source directory and copy to the destination directory
             foreach (FileInfo file in dir.GetFiles())
             {
                 string targetFilePath = Path.Combine(destinationDir, file.Name);
                 file.CopyTo(targetFilePath);
             }
 
-            // If recursive and copying subdirectories, recursively call this method
             if (recursive)
             {
                 foreach (DirectoryInfo subDir in dirs)
@@ -144,6 +121,79 @@ namespace valModReplacer
                 }
             }
         }
+        private void urlChecks()
+        {
+            var savedUrl = Properties.Settings.Default.Url;
+            if (Uri.IsWellFormedUriString(Properties.Settings.Default.Url, UriKind.Absolute))
+            {
+                //good url
+            }
+            else
+            {
+                installButton.Enabled = false;
+                installButton.Text = "URL invalid";
+                toolStripStatusLabel2.ForeColor = Color.Red;
+                toolStripStatusLabel2.Text = "URL invalid";
 
+            }
+
+            if (savedUrl != "")
+            {
+                urlBox.Text = Properties.Settings.Default.Url;
+            }
+        }
+        private void folderChecks()
+        {
+            string root = @".\BepInEx";
+            if (Directory.Exists(root))
+            {
+                Iou.type = "Update";
+                installButton.Text = "Update";
+            }
+            else
+            {
+                Iou.type = "Install";
+                installButton.Text = "Install";
+            }
+
+
+            string curFile = @".\valheim.exe";
+            //string curFile = @".\valModReplacer.exe";
+            if (File.Exists(curFile))
+            {
+                toolStripStatusLabel2.Text = "Ready";
+                toolStripStatusLabel2.ForeColor = Color.Green;
+            }
+            else
+            {
+                installButton.Enabled = false;
+                installButton.Text = "wrong folder";
+                toolStripStatusLabel2.Text = "wrong folder, wont run, put this into your game folder";
+                toolStripStatusLabel2.ForeColor = Color.Red;
+            }
+        }
+        private void urlBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Uri.IsWellFormedUriString(urlBox.Text, UriKind.Absolute))
+            {
+                installButton.Enabled = true;
+                toolStripStatusLabel2.ForeColor = Color.Green;
+                toolStripStatusLabel2.Text = "URL valid";
+                installButton.Text = Iou.type;
+
+            }
+            else
+            {
+                installButton.Enabled = false;
+                installButton.Text = "URL invalid";
+                toolStripStatusLabel2.ForeColor = Color.Red;
+                toolStripStatusLabel2.Text = "URL invalid";
+
+
+            }
+
+            Properties.Settings.Default.Url = urlBox.Text;
+            Properties.Settings.Default.Save();
+        }
     }
 }

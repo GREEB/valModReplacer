@@ -67,6 +67,7 @@
             this.installButton.TabIndex = 2;
             this.installButton.Text = "Install / Update";
             this.installButton.UseVisualStyleBackColor = false;
+            this.installButton.Enabled = false;
             this.installButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // linkLabel1
@@ -87,7 +88,8 @@
             this.urlBox.Size = new System.Drawing.Size(406, 16);
             this.urlBox.TabIndex = 0;
             this.urlBox.TabStop = false;
-            this.urlBox.Text = "https://codeload.github.com/GREEB/gvModPack/zip/refs/heads/main";
+            this.urlBox.Text = "enter url to zip here";
+            this.urlBox.TextChanged += new System.EventHandler(this.urlBox_TextChanged);
             // 
             // urlLabel
             // 
