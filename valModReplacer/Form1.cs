@@ -28,11 +28,16 @@ namespace valModReplacer
             string zipFilePath = @".\mods.zip";
             string finalPath = @".\BepInEx";
             string tempPath = @".\up_temp";
+            string buPath = @".\BepInEx.old";
 
             //string curFile = @".\valModReplacer.exe";
             if (Directory.Exists(finalPath))
             {
-                Directory.Delete(@".\BepInEx.old", true);
+                if (Directory.Exists(buPath))
+                {
+                    Directory.Delete(buPath, true);
+
+                }
                 toolStripStatusLabel2.Text = "Creating Backup of BepInEx";
                 CopyDirectory(@".\BepInEx", @".\BepInEx.old", true);
                 backupLabel.Visible = true;
@@ -59,11 +64,10 @@ namespace valModReplacer
             }
             catch (Exception exc)
             {
-                toolStripStatusLabel2.Text = "error.. restart and retry";
+                // we dont retry if fail to download we just quit app, lol, if using simplewall this will happen
+                toolStripStatusLabel2.Text = "error.. restart and retry, could not download";
                 toolStripStatusLabel2.ForeColor = Color.Red;
-                Thread.Sleep(2000);
-                System.Windows.Forms.Application.Exit();
-                return;
+                installButton.Enabled = false;
             }
             finally
             {

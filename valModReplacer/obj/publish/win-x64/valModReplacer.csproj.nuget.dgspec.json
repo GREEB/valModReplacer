@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer\\valModReplacer\\valModReplacer.csproj": {}
+    "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer2\\valModReplacer\\valModReplacer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer\\valModReplacer\\valModReplacer.csproj": {
+    "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer2\\valModReplacer\\valModReplacer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer\\valModReplacer\\valModReplacer.csproj",
+        "projectUniqueName": "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer2\\valModReplacer\\valModReplacer.csproj",
         "projectName": "valModReplacer",
-        "projectPath": "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer\\valModReplacer\\valModReplacer.csproj",
+        "projectPath": "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer2\\valModReplacer\\valModReplacer.csproj",
         "packagesPath": "C:\\Users\\g99\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer\\valModReplacer\\obj\\publish\\win-x64\\",
+        "outputPath": "C:\\Users\\g99\\Documents\\GitHub\\valModReplacer2\\valModReplacer\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\g99\\AppData\\Roaming\\NuGet\\NuGet.Config",
