@@ -33,7 +33,6 @@
             this.installButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.urlBox = new System.Windows.Forms.TextBox();
-            this.urlLabel = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -58,6 +57,7 @@
             this.installButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.installButton.BackColor = System.Drawing.Color.SeaShell;
             this.installButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.installButton.Enabled = false;
             this.installButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.installButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.installButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -67,7 +67,6 @@
             this.installButton.TabIndex = 2;
             this.installButton.Text = "Install / Update";
             this.installButton.UseVisualStyleBackColor = false;
-            this.installButton.Enabled = false;
             this.installButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // linkLabel1
@@ -81,24 +80,15 @@
             // urlBox
             // 
             this.urlBox.BackColor = System.Drawing.Color.White;
-            this.urlBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.urlBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.urlBox.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.urlBox.Location = new System.Drawing.Point(41, 102);
+            this.urlBox.Location = new System.Drawing.Point(12, 104);
             this.urlBox.Name = "urlBox";
-            this.urlBox.Size = new System.Drawing.Size(406, 16);
+            this.urlBox.Size = new System.Drawing.Size(406, 23);
             this.urlBox.TabIndex = 0;
             this.urlBox.TabStop = false;
             this.urlBox.Text = "enter url to zip here";
             this.urlBox.TextChanged += new System.EventHandler(this.urlBox_TextChanged);
-            // 
-            // urlLabel
-            // 
-            this.urlLabel.AutoSize = true;
-            this.urlLabel.Location = new System.Drawing.Point(10, 103);
-            this.urlLabel.Name = "urlLabel";
-            this.urlLabel.Size = new System.Drawing.Size(25, 15);
-            this.urlLabel.TabIndex = 7;
-            this.urlLabel.Text = "Url:";
             // 
             // statusStrip1
             // 
@@ -155,7 +145,6 @@
             this.Controls.Add(this.backupLabel);
             this.Controls.Add(this.subInfo);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.urlBox);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.installButton);
@@ -176,7 +165,6 @@
         private Button installButton;
         private LinkLabel linkLabel1;
         private TextBox urlBox;
-        private Label urlLabel;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private Label subInfo;

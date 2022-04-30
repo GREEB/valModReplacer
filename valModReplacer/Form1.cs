@@ -17,7 +17,19 @@ namespace valModReplacer
             InitializeComponent();
             folderChecks();
             urlChecks();
+            Process[] processes = Process.GetProcessesByName("valheim");
+            if (processes.Length != 0)
+            {
 
+                installButton.Enabled = false;
+                infoText.ForeColor = Color.Red;
+                infoText.Text = "Close Valheim first!!!";
+                toolStripStatusLabel2.ForeColor = Color.Red;
+                toolStripStatusLabel2.Text = "CLOSE VALHEIM BRO";
+
+                return;
+            }
+           
         }
         private async void button1_Click(object sender, EventArgs e)
         {
@@ -198,5 +210,6 @@ namespace valModReplacer
             Properties.Settings.Default.Url = urlBox.Text;
             Properties.Settings.Default.Save();
         }
+
     }
 }
