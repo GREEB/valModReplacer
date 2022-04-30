@@ -72,7 +72,6 @@ namespace valModReplacer
             finally
             {
                 toolStripStatusLabel2.Text = "Download Successful";
-
             }
 
             toolStripStatusLabel2.Text = "Extracting Zip";
