@@ -1,5 +1,5 @@
 ##  valModReplacer
-[![](https://img.shields.io/badge/Download-177kb-1)
+[![](https://img.shields.io/badge/Download-209kb-1)
 ]([](https://github.com/GREEB/valModReplacer/raw/main/valModReplacer/bin/Release/net6.0-windows/publish/win-x64/valModReplacer.exe)
 )
 
